@@ -35,4 +35,10 @@ O git stash drop funciona exatamente como o pop, mas com uma simples diferença:
 sem aplicá-lo em nosso repositório. Dessa forma, git stash drop remove o último item adicionado à stash, 
 enquanto o git stash drop 1 remove da stash o item com índice 1.
 
-git restore -- . (não especificar irá pro header)
+E o git restore é um dos comandos que veio para substituir o git checkout. Então, o git checkout, 
+como dissemos, faz muitas coisas. Uma das coisas que ele fazia é o restore. Com o git checkout -- ., temos o mesmo resultado.
+
+O que podemos fazer? Podemos copiar o hash do commit, fazer o git restore --source = e colá-lo em seguida. 
+Queremos restaurar para esse estado nosso index.html. O comando inteiro ficará parecido com o seguinte:
+
+git restore --source = 5081a55bc92af2917c8519f16a7412b86ba3b1c2 index.html
