@@ -42,3 +42,22 @@ O que podemos fazer? Podemos copiar o hash do commit, fazer o git restore --sour
 Queremos restaurar para esse estado nosso index.html. O comando inteiro ficará parecido com o seguinte:
 
 git restore --source = 5081a55bc92af2917c8519f16a7412b86ba3b1c2 index.html
+
+Uma tag no Git é criada através do comando git tag nome_da_tag, que rodamos no Terminal. Por exemplo, 
+vamos rodar o comando git tag v0.1.0. Assim, criamos uma tag na nossa HEAD, ou seja,
+no momento mais recente da branch que tivermos feito o commit. Após criarmos a tag e rodarmos o comando git log de novo, 
+recebemos as informações do commit com a nossa tag
+
+Criando uma Annotated tag
+Agora queremos criar uma nova tag com uma informação a mais, por exemplo, uma mensagem. Para isso, 
+podemos usar o comando git tag -a nome_da_tag -m "mensagem da tag", sendo o -a de annotated (anotação) e o -m de message (mensagem). 
+Chamaremos a tag de v0.1.1 e passaremos a menagem "Lançamento da versão 0.1.1.
+
+git tag -a v0.1.1 -m "Lançamento da versão 0.1.1"
+
+Utilize o comando git tag {nome_da_tag} para criar uma tag apontando para o HEAD atual;
+Com o comando git tag {nome_da_tag} {hash_de_um_commit}, crie uma tag apontando para um commit específico;
+Remova a primeira tag com git tag -d {nome_da_tag};
+Crie a tag novamente, mas agora com uma mensagem, utilizando git tag -a {nome_da_tag} -m “Mensagem da tag”;
+Envie as tags para o GitHub com git push;
+Crie uma release no GitHub a partir de uma das tags.
